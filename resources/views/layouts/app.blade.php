@@ -10,7 +10,8 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="{!! asset('css/font-awesome.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/bootstrap.css') !!}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
@@ -81,6 +82,16 @@
                 </ul>
                  <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa fa-language"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="?lang=nl">Nederlands</a></li>
+                            <li><a href="?lang=fr">Frans</a></li>
+                            <li><a href="?lang=en">Engels</a></li>
+                        </ul>
+                    </li>
 
             <li class="dropdown dropdown-notifications">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
