@@ -28,6 +28,7 @@ return [
 
     'home' => 'Home',
     'customers' => 'Customers',
+    'callbacks' => 'Callbacks',
     'departments' => 'Departments',
     'roles' => 'Roles',
     'staff' => 'Staff',
