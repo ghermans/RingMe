@@ -15,6 +15,7 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{!! asset('css/bootstrap-notifications.css') !!}">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{!! asset('css/bootstrap-formhelpers.css') !!}">
     <link rel="stylesheet" href="{!! asset('js/icheck-1/skins/all.css') !!}">
 
@@ -65,8 +66,10 @@
                     <li><a href="{{ url('/customers') }}">{{ trans('app.customers')}}</a></li>
                     <li><a href="{{ url('/callbacks') }}">{{ trans('app.callbacks')}}</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">{{ trans('app.settings')}} <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{ trans('app.settings')}}
+                            <span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
                             <li class="navbar-menu-item">
                                 <div class="label">{{ Lang::get('app.staff') }}</div>
@@ -78,7 +81,7 @@
                                 <div class="label">{{ Lang::get('app.staff') }}</div>
                             </li>
                             <li><a href="{!! route('departments.index') !!}">Departments</a></li>
-                            <li><a href="#">Staff</a></li>
+                            <li><a href="{!! url('staff') !!}">Staff</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Roles</a></li>
                         </ul>
@@ -193,6 +196,7 @@
 <script src="{!! asset('js/vue.js') !!}"></script>
 <script src="{!! asset('js/bootstrap-formhelpers.js') !!}"></script>
 <script src="{!! asset('js/icheck-1/icheck.js') !!}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 <script>
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip()

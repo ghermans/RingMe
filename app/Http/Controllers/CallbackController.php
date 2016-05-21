@@ -13,6 +13,12 @@ use App\Http\Requests;
  */
 class CallbackController extends Controller
 {
+	    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('lang');
+    }
+    
     /**
      * Display all the callbacks.
      *
@@ -36,6 +42,16 @@ class CallbackController extends Controller
     }
 
     /**
+     * Store a callback request.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store()
+    {
+        return redirect()->back(302);
+    }
+
+    /**
      * Show update form for a callback.
      * 
      * @param  int $id the callback id in the database.
@@ -44,6 +60,17 @@ class CallbackController extends Controller
     public function edit($id)
     {
     	return view('callbacks/details');
+    }
+
+    /**
+     * Destroy a callback out off the system.
+     *
+     * @param  int $id The callback id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        return redirect()->back(302);
     }
 
 }

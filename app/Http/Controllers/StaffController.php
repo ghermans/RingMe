@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Roles;
+
+use Chrisbjr\ApiGuard\Models\ApiKey;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -120,7 +123,9 @@ class StaffController extends Controller
      */
     public function profile()
     {
-    	return view('users/profile');
+        $id = auth()->user()->id;
+        $data['tokens'] = ApiKey::where('user_id', $id)->get();
+    	return view('users/profile', $data);
     }
 
     /**
@@ -139,4 +144,20 @@ class StaffController extends Controller
 
         return redirect()->to('/staff');
     }
+
+    public function get_roles()
+    {
+        $items = Roles::all();
+        $data2 = [];
+        foreach($items as $role)
+        {
+         $data2[] = [
+        'value' => $role["id"],
+        'text'  => $role["name"]
+        ];
+
+        }
+        return json_encode($data2);
+    } 
+
 }
